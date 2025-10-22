@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextilePro | Premium Garment Manufacturing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#3b82f6',
+                        accent: '#ef4444',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-pattern {
+            background: radial-gradient(circle, rgba(30,64,175,0.1) 0%, rgba(255,255,255,0.1) 100%);
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-tshirt text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-primary">Textile<span class="text-accent">Pro</span></span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium">About</a>
+                    <a href="#products" class="text-gray-700 hover:text-primary font-medium">Products</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-primary font-medium">Gallery</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">About</a>
+                <a href="#products" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Products</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-20 hero-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Premium <span class="text-primary">Garment Manufacturing</span> Solutions
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-600 max-w-2xl">
+                        Specializing in high-quality t-shirts, uniforms, and textile products for global brands. Sustainable manufacturing with exceptional quality and competitive pricing.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#contact" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                            Get Quote
+                        </a>
+                        <a href="#products" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                            View Products
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-r from-primary to-blue-400 rounded-full absolute -z-10 top-4 left-4 opacity-20"></div>
+                        <div class="floating">
+                            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Garment Manufacturing" class="rounded-2xl shadow-xl w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">About Our Manufacturing</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Textile Manufacturing" class="rounded-2xl shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Leading Garment Manufacturer Since 2005</h3>
+                    <p class="text-gray-600 mb-4">
+                        At TextilePro, we specialize in producing high-quality garments for brands worldwide. Our state-of-the-art facility combines traditional craftsmanship with modern technology to deliver exceptional products.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        We pride ourselves on sustainable practices, ethical labor standards, and innovative design capabilities. Our team of experts works closely with clients to bring their vision to life while maintaining the highest quality standards.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary text-xl mr-2"></i>
+                            <span>ISO 9001 Certified</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary text-xl mr-2"></i>
+                            <span>Sustainable Production</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary text-xl mr-2"></i>
+                            <span>Global Shipping</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-primary text-xl mr-2"></i>
+                            <span>Quality Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">Our Products</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Explore our range of high-quality garments designed for various industries and applications
+                </p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            
+            <!-- Product Filter Tabs -->
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex bg-white p-1 rounded-lg shadow">
+                    <button class="px-4 py-2 rounded-lg font-medium bg-primary text-white">All Products</button>
+                    <button class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:text-primary">T-Shirts</button>
+                    <button class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:text-primary">Uniforms</button>
+                    <button class="px-4 py-2 rounded-lg font-medium text-gray-700 hover:text-primary">Custom</button>
+                </div>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Cotton T-Shirt" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Premium Cotton T-Shirt</h3>
+                        <p class="text-gray-600 mb-4">100% organic cotton, available in 30+ colors</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary">$12.99</span>
+                            <button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600857062286-2a9a0a9e6a0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Performance T-Shirt" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Performance T-Shirt</h3>
+                        <p class="text-gray-600 mb-4">Moisture-wicking fabric, ideal for activewear</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary">$15.99</span>
+                            <button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1583744003640-95d9d6320c47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Custom Printed T-Shirt" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Custom Printed T-Shirt</h3>
+                        <p class="text-gray-600 mb-4">Full-color printing with your unique designs</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary">$18.99</span>
+                            <button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Corporate Uniform" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Corporate Uniform</h3>
+                        <p class="text-gray-600 mb-4">Professional attire for businesses and organizations</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary">$24.99</span>
+                            <button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="School Uniform" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">School Uniform</h3>
+                        <p class="text-gray-600 mb-4">Durable and comfortable uniforms for educational institutions</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary">$19.99</span>
+                            <button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1593030103066-0093718efeb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Custom Fabric" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Custom Fabric</h3>
+                        <p class="text-gray-600 mb-4">Tailor-made fabrics for unique applications</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary">$29.99/sq.yd</span>
+                            <button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    Request Full Catalogue
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">Our Production Gallery</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    A glimpse into our manufacturing process and quality standards
+                </p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Production Line" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Quality Control" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Fabric Cutting" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1583744003640-95d9d6320c47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sewing Process" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1593030103066-0093718efeb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Finished Products" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Packaging" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">Why Choose TextilePro</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Our commitment to excellence sets us apart in the garment manufacturing industry
+                </p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Quality -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-star text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Uncompromising Quality</h3>
+                    <p class="text-gray-600">
+                        We use premium materials and rigorous quality control processes to ensure every product meets international standards.
+                    </p>
+                </div>
+                
+                <!-- Design -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-palette text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Innovative Design</h3>
+                    <p class="text-gray-600">
+                        Our design team creates cutting-edge patterns and styles that help your brand stand out in the market.
+                    </p>
+                </div>
+                
+                <!-- Delivery -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shipping-fast text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Reliable Delivery</h3>
+                    <p class="text-gray-600">
+                        We maintain strict timelines and have a global logistics network to ensure on-time delivery worldwide.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gradient-to-r from-primary to-blue-500 rounded-2xl p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Ready to Start Your Project?</h3>
+                        <p class="text-blue-100 mb-6">
+                            Contact us today for a free consultation and quote on your next garment project.
+                        </p>
+                        <a href="#contact" class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full inline-block transition duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-lg text-center">
+                            <div class="text-3xl font-bold text-white">500+</div>
+                            <div class="text-blue-100">Clients Worldwide</div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-lg text-center">
+                            <div class="text-3xl font-bold text-white">15+</div>
+                            <div class="text-blue-100">Years Experience</div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-lg text-center">
+                            <div class="text-3xl font-bold text-white">10M+</div>
+                            <div class="text-blue-100">Items Produced</div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-lg text-center">
+                            <div class="text-3xl font-bold text-white">98%</div>
+                            <div class="text-blue-100">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">Client Testimonials</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Hear what our clients say about our services
+                </p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-600">Fashion Brand Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "TextilePro has been our manufacturing partner for 3 years. Their quality is consistent, and their attention to detail is unmatched."
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-600">Retail Chain Director</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "The turnaround time is impressive, and their sustainable practices align with our brand values. Highly recommended!"
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Emma Rodriguez</h4>
+                            <p class="text-gray-600">Athletic Brand CEO</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Their performance fabrics are top-notch. The durability and comfort exceed our expectations every time."
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Reach out to us for inquiries, quotes, or collaborations
+                </p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+                    <p class="text-gray-600 mb-8">
+                        Have a project in mind? Contact our team for a custom quote or to discuss your requirements.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Our Location</h4>
+                                <p class="text-gray-600">TextilePro Manufacturing, Tirupur, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Phone Number</h4>
+                                <p class="text-gray-600">+91 98765 43210</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email Address</h4>
+                                <p class="text-gray-600">info@textilepro.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Working Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 9AM - 6PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="firstName" class="block text-gray-700 mb-2">First Name</label>
+                                <input type="text" id="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-gray-700 mb-2">Last Name</label>
+                                <input type="text" id="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john@example.com">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="+1 234 567 8900">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-tshirt text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Textile<span class="text-accent">Pro</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Premium garment manufacturing solutions for global brands. Quality, sustainability, and innovation in every product.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">T-Shirt Manufacturing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Uniform Production</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Custom Fabric Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Bulk Orders</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Global Shipping</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for updates and offers.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your Email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button class="bg-primary hover:bg-blue-800 px-4 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 TextilePro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/1234567890" target="_blank" class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('#mobile-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will contact you shortly.');
+                this.reset();
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.product-card, .gallery-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
